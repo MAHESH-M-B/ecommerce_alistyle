@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content%}
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-gray">
+<div class="container">
+	<h2 class="title-page">My account</h2>
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION PAGETOP END// ========================= -->
+	
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+<div class="container">
+
+<div class="row">
+    {% include 'includes/sidebar.html' %}
+	<main class="col-md-9">
+         {% include 'includes/alerts.html' %}
+		<article class="card">
+		<header class="card-header">
+			<strong class="d-inline-block mr-3">Edit profile</strong>
+
+		</header>
+		<div class="card-body">
+            <div class="mb-4">
+                <img src="{{user_profile.profile_picture.url}}" width="100" style="border-radius: 50px;" alt="Profile Picture">
+            </div>
+            
+			<div class="row"> 
+                <div class="col-md-12">
+                    <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">First name</label>
+                                {{user_form.first_name}}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">First name</label>
+                                {{user_form.last_name}}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">Phone number</label>
+                                {{user_form.phone_number}}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Profile picture</label>
+                                {{profile_form.profile_picture}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Address Line 1</label>
+                            {{profile_form.address_line_1}}
+                        </div>
+                        <div class="form-group">
+                            <label for="">Address Line 2</label>
+                            {{profile_form.address_line_2}}
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="">City</label>
+                                {{profile_form.city}}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">State</label>
+                                {{profile_form.state}}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">Country</label>
+                                {{profile_form.country}}
+                            </div>
+                        </div>
+                        <input type="submit" value="Save" class="btn btn-primary">
+                    </form>
+                </div>
+			</div> <!-- row.// -->
+            
+		</div> <!-- card-body .// -->
+
+		</article> <!-- order-group.// --> 
+	</main>
+</div>
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+{% endblock %}

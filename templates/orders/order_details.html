@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="section-content padding-y bg">
+<div class="container">
+
+<!-- ============================ COMPONENT 1 ================================= -->
+
+<div class="row">
+	<aside class="col-lg-7">
+
+		<div class="card">
+		<div class="card-body">
+      <table class="table table-borderless table-shopping-cart">
+      <thead class="text-muted">
+      <tr class="small text-uppercase">
+        <th scope="col">Product</th>
+        <th scope="col" width="120">Quantity</th>
+        <th scope="col" width="120">Price</th>
+
+      </tr>
+      </thead>
+      <tbody>
+
+      {% for cart_item in cart_items %}
+      <tr>
+      	<td>
+      		<figure class="itemside align-items-center">
+      			<div class="aside"><img src="{{ cart_item.product.image.url }}" class="img-sm"></div>
+      			<figcaption class="info">
+      				<a href="{{cart_item.product.get_url}}" class="title text-dark">{{cart_item.product.product_name}}</a>
+      				<p class="text-muted small">
+      					{% if cart_item.variations.all %}
+      						{% for item in cart_item.variations.all %}
+      							{{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
+      						{% endfor %}
+      					{% endif %}
+      				</p>
+      			</figcaption>
+      		</figure>
+      	</td>
+      	<td>
+      		<!-- col.// -->
+      				<label for="">{{cart_item.quantity}}</label>
+      	</td>
+      	<td>
+      		<div class="price-wrap">
+      			<var class="price">$ {{cart_item.totalprice}}</var>
+      			<small class="text-muted"> $ {{ cart_item.product.price }} each </small>
+      		</div> <!-- price-wrap .// -->
+      	</td>
+
+      </tr>
+      {% endfor %}
+
+      </tbody>
+      </table>
+
+		</div> <!-- card-body.// -->
+		</div> <!-- card.// -->
+
+
+</aside> <!-- col.// -->
+<aside class="col-lg-4">
+<h5>Order details:</h5> 
+Order number : {{order.order_number}}<br>
+Price Total : {{order.order_total}} PLN<br>
+TAX included : {{order.tax}} PLN<br>
+Date : {{order.created_at}} <br>
+
+
+<h5>Order to:</h5>
+{{order.full_name}} <br>
+{{order.full_address}}<br>
+{{order.state}}<br>
+{{order.city}}<br>
+{{order.country}}<br>
+<h5>Transaction details</h5>
+Transaction number : {{order.payment.payment_id}} <br>
+Transaction method : {{order.payment.payment_method}} <br>
+</aside>
+
+</div> <!-- row.// -->
+
+<!-- ============================ COMPONENT 1 END .// ================================= -->
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+{% endblock %}

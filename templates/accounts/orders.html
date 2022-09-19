@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block content %}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y bg">
+<div class="container">
+	<div class="row">
+		{% include 'includes/sidebar.html' %}
+        <main class="col-md-9">
+            {% include 'includes/alerts.html' %}
+            <article class="card">
+            <header class="card-header">
+                <strong class="d-inline-block mr-3">Your orders history</strong>
+    
+            </header>
+            <div class="card-body">
+                
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <table class="table table-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">Order #</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Price</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                             {% for order in allorders %}   
+                              <tr>
+                                <td><a href="{{order.get_url}}">{{order.order.order_number}}</a></td>
+                                <td>{{order.created_at}}</td>
+                                <td>{{order.order.order_total}} PLN</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                    </div>
+                </div> <!-- row.// -->
+                
+            </div> <!-- card-body .// -->
+    
+            </article> <!-- order-group.// --> 
+        </main>
+</div> <!-- row.// -->
+</div>
+
+
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+{%endblock%}
