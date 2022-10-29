@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="max-age=604800">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta name="description" content="Bootstrap e-commerce html template similar to Alibaba">
+	<meta name="keywords" content="Online template, shop, theme, template, html, css, bootstrap 4">
+
+	<title>alistyle</title>
+
+
+
+	<!-- jQuery -->
+	<script src="{% static 'index_files/jquery-2.0.0.min.js.download' %}" type="text/javascript"></script>
+	<script data-dapp-detection="">
+		! function () {
+			let e = !1;
+
+			function n() {
+				if (!e) {
+					const n = document.createElement("meta");
+					n.name = "dapp-detected", document.head.appendChild(n), e = !0
+				}
+			}
+			if (window.hasOwnProperty("ethereum")) {
+				if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return;
+				n()
+			} else {
+				var t = window.ethereum;
+				Object.defineProperty(window, "ethereum", {
+					configurable: !0,
+					enumerable: !1,
+					set: function (e) {
+						window.__disableDappDetectionInsertion || n(), t = e
+					},
+					get: function () {
+						if (!window.__disableDappDetectionInsertion) {
+							const e = arguments.callee;
+							e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf(
+								"getOwnPropertyNames") || n()
+						}
+						return t
+					}
+				})
+			}
+		}();
+	</script>
+
+	<!-- Bootstrap4 files-->
+	<script src="{% static 'index_files/bootstrap.bundle.min.js.download' %}" type="text/javascript"></script>
+	<link href="{% static 'index_files/bootstrap.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- Font awesome 5 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+	<!-- custom style -->
+	<link href="{% static 'index_files/ui.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'index_files/responsive.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- custom javascript -->
+	<script src="{% static 'index_files/script.js.download' %}" type="text/javascript"></script>
+
+</head>
+
+<body cz-shortcut-listen="true">
+
+       <!-- navbar -->
+{% include 'includes/navbar.html' %}
+
+{%  block content %}
+        <!-- content -->
+{% endblock %}
+  
+
+        <!-- footer -->
+{% include 'includes/footer.html' %}
