@@ -70,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'alistyle.wsgi.application'
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
