@@ -1,4 +1,4 @@
 from django.contrib import admin
-# from .models import accounts
+from .models import Accounts
 # Register your models here.
-# admin.site.register(accounts)
+admin.site.register(Accounts)
