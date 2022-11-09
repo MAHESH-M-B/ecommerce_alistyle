@@ -130,152 +130,40 @@
 		</section>
 		<!-- =============== SECTION DEAL // END =============== -->
 
-		<!-- =============== SECTION 1 =============== -->
-		<section class="padding-bottom">
+
+
+		<!-- =============== SECTION ITEMS =============== -->
+		<section class="padding-bottom-sm">
+
 			<header class="section-heading heading-line">
-				<h4 class="title-section text-uppercase">Apparel</h4>
+				<h4 class="title-section text-uppercase">Products</h4>
+				<div class="form-inline">
+					<span class="mr-md-auto"> found <b>{{ products_count }}</b> items </span>
+
+				</div>
 			</header>
 
-			<div class="card card-home-category">
-				<div class="row no-gutters">
-					<div class="col-md-3">
-
-						<div class="home-category-banner bg-light-orange">
-							<h5 class="title">Best trending clothes only for summer</h5>
-							<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. </p>
-							<a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
-							<img src="{% static 'index_files/2.jpg' %}" class="img-bg">
-						</div>
-
-					</div> <!-- col.// -->
-					<div class="col-md-9">
-						<ul class="row no-gutters bordered-cols">
-						
-							{%  for category in links  %}
-
-
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">{{category.category_name}} </h6>
-										<img class="img-sm float-right" src="{{category.cat_image.url}}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i>{{category.cat_location}}</p>
-									</div>
-								</a>
-							</li>
-							{% endfor %}
+			<div class="row row-sm">
 				
-						</ul>
-					</div> <!-- col.// -->
-				</div> <!-- row.// -->
-			</div> <!-- card.// -->
+
+				{% for product in products %}
+				<div class="col-xl-2 col-lg-3 col-md-4 col-6">
+					<div class="card card-sm card-product-grid">
+						<a href="#" class="img-wrap"> <img src="{{ product.product_image.url }}"> </a>
+						<figcaption class="info-wrap">
+							<a href="#" class="title">{{product.Product_name}}</a>
+							<div class="price mt-1">${{ product.product_price }}</div> <!-- price-wrap.// -->
+						</figcaption>
+					</div>
+				</div> <!-- col.// -->
+				{% endfor %}
+				
+			</div> <!-- row.// -->
 		</section>
-		<!-- =============== SECTION 1 END =============== -->
-
-		<!-- =============== SECTION 2 =============== -->
-		<section class="padding-bottom">
-			<header class="section-heading heading-line">
-				<h4 class="title-section text-uppercase">Electronics</h4>
-			</header>
-
-			<div class="card card-home-category">
-				<div class="row no-gutters">
-					<div class="col-md-3">
-
-						<div class="home-category-banner bg-light-orange">
-							<h5 class="title">Machinery items for manufacturers</h5>
-							<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. </p>
-							<a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
-							<img src="{% static 'index_files/14.jpg' %}" class="img-bg">
-						</div>
-
-					</div> <!-- col.// -->
-					<div class="col-md-9">
-						<ul class="row no-gutters bordered-cols">
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Well made electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/7.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Tokyo, Japan</p>
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Another demo text for item stuff goes here </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/8.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Hong Kong, China</p>
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Home and kitchen electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static  'index_files/9.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Tashkent, Uzb</p>
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Group of electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/10.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Guanjou, China</p>
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Home and kitchen electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/11.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Guanjou, China</p>
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Home and kitchen electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/12.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Guanjou, China</p>
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Home and kitchen electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/1.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Guanjou, China</p>
-
-									</div>
-								</a>
-							</li>
-							<li class="col-6 col-lg-3 col-md-4">
-								<a href="#" class="item">
-									<div class="card-body">
-										<h6 class="title">Home and kitchen electronic stuff collection </h6>
-										<img class="img-sm float-right" src="{% static 'index_files/2.jpg' %}">
-										<p class="text-muted"><i class="fa fa-map-marker-alt"></i> Guanjou, China</p>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</div> <!-- col.// -->
-				</div> <!-- row.// -->
-			</div> <!-- card.// -->
-		</section>
-		<!-- =============== SECTION 2 END =============== -->
+		<!-- =============== SECTION ITEMS .//END =============== -->
 
 
-
+        
 		<!-- =============== SECTION REQUEST =============== -->
 
 		<section class="padding-bottom">
@@ -341,35 +229,6 @@
 		</section>
 
 		<!-- =============== SECTION REQUEST .//END =============== -->
-
-
-		<!-- =============== SECTION ITEMS =============== -->
-		<section class="padding-bottom-sm">
-
-			<header class="section-heading heading-line">
-				<h4 class="title-section text-uppercase">Recommended items</h4>
-			</header>
-
-			<div class="row row-sm">
-
-				{% for product in products %}
-				<div class="col-xl-2 col-lg-3 col-md-4 col-6">
-					<div class="card card-sm card-product-grid">
-						<a href="#" class="img-wrap"> <img src="{{ product.product_image.url }}"> </a>
-						<figcaption class="info-wrap">
-							<a href="#" class="title">{{product.Product_name}}</a>
-							<div class="price mt-1">${{ product.product_price }}</div> <!-- price-wrap.// -->
-						</figcaption>
-					</div>
-				</div> <!-- col.// -->
-				{% endfor %}
-				
-			</div> <!-- row.// -->
-		</section>
-		<!-- =============== SECTION ITEMS .//END =============== -->
-
-
-
 
 		<article class="my-4">
 			<img src="{% static 'index_files/ad-sm.png' %}" class="w-100">
