@@ -17,8 +17,6 @@
 	<title>Alistyle</title>
 	<link href="{% static 'index_files/logo.png' %}" rel="shortcut icon" type="image/x-icon">
 
-
-
 	<!-- jQuery -->
 	<script src="{% static 'index_files/jquery-2.0.0.min.js.download' %}" type="text/javascript"></script>
 	<script data-dapp-detection="">
@@ -73,13 +71,13 @@
 
 <body cz-shortcut-listen="true">
 
-       <!-- navbar -->
-{% include 'includes/navbar.html' %}
+	<!-- navbar -->
+	{% include 'includes/navbar.html' %}
 
-{%  block content %}
-        <!-- content -->
-{% endblock %}
-  
+	{% block content %}
+	<!-- content -->
+	{% endblock %}
 
-        <!-- footer -->
-{% include 'includes/footer.html' %}
+
+	<!-- footer -->
+	{% include 'includes/footer.html' %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- =============== SECTION ITEMS =============== -->
+	<section class="padding-bottom-sm">
+
+		<header class="section-heading heading-line">
+			<h4 class="title-section text-uppercase">Products</h4>
+			<div class="form-inline">
+				<span class="mr-md-auto"> found <b>{{ products_count }}</b> items </span>
+
+			</div>
+		</header>
+
+		<div class="row row-sm">
+
+
+			{% for product in products %}
+			<div class="col-xl-2 col-lg-3 col-md-4 col-6">
+				<div class="card card-sm card-product-grid">
+					<a href="#" class="img-wrap"> <img src="{{ product.product_image.url }}"> </a>
+					<figcaption class="info-wrap">
+						<a href="#" class="title">{{product.Product_name}}</a>
+						<div class="price mt-1">${{ product.product_price }}</div> <!-- price-wrap.// -->
+					</figcaption>
+				</div>
+			</div> <!-- col.// -->
+			{% endfor %}
+
+		</div> <!-- row.// -->
+	</section>
+	<!-- =============== SECTION ITEMS .//END =============== -->
+{% endblock %}

@@ -4,6 +4,17 @@ from .models import Store
 from .serializers import StoreSerializer
 # Create your views here.
 
+def store(request):
+    products=Store.objects.all().filter(is_available=True)
+    products_count=products.count()
+    context={
+        'products':products,
+        'products_count':products_count, 
+    }
+    return render(request,'store/store.html' , context)
+
+
+
 class StoreViewset(viewsets.ModelViewSet):
     serializer_class=StoreSerializer
     queryset=Store.objects.all()
