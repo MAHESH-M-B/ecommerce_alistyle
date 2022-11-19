@@ -3,6 +3,7 @@ from category.models import Category
 # Create your models here.
 class Store(models.Model):
     Product_name=models.CharField(max_length=100,unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     product_price=models.IntegerField()
     product_image=models.ImageField(upload_to='photos/products')
     product_description=models.TextField(max_length=100,blank=True)
