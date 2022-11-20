@@ -13,7 +13,7 @@ class Store(models.Model):
     is_available=models.BooleanField(default=True)
     category=models.ForeignKey(Category,models.CASCADE)
 
-    
+
     
     def __str__(self):
         return self.Product_name
