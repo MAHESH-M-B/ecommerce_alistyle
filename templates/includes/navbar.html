@@ -93,47 +93,36 @@
                                     <a href="#">
                                         <h5>Man Fashion</h5>
                                     </a>
-                                    <a href="#">Shirt</a>
-                                    <a href="#">T-shirt</a>
-                                    <a href="#">Jins</a>
-                                    <a href="#">Shoe</a>
-                                    <a href="#">Sunglass</a>
-                                    <a href="#">Panjabi</a>
+                                    {% for category in links %}
+                                    <a href="{{category.get_url}}">{{category.category_name}}</a>
+                                    {% endfor%}
+                                  
                                 </div>
                                 <div class="col-6">
                                     <a href="#">
                                         <h5>Women Fashion</h5>
                                     </a>
-                                    <a href="#">Shirt</a>
-                                    <a href="#">T-shirt</a>
-                                    <a href="#">Jins</a>
-                                    <a href="#">Shoe</a>
-                                    <a href="#">Sunglass</a>
-                                    <a href="#">Panjabi</a>
+                                    {% for category in links %}
+                                    <a href="{{category.get_url}}">{{category.category_name}}</a>
+                                    {% endfor%}
                                 </div>
 
                                 <div class="col-6">
                                     <a href="#">
                                         <h5>Baby Fashion</h5>
                                     </a>
-                                    <a href="#">Shirt</a>
-                                    <a href="#">T-shirt</a>
-                                    <a href="#">Jins</a>
-                                    <a href="#">Shoe</a>
-                                    <a href="#">Sunglass</a>
-                                    <a href="#">Panjabi</a>
+                                    {% for category in links %}
+                                    <a href="{{category.get_url}}#">{{category.category_name}}</a>
+                                    {% endfor%}
                                 </div>
 
                                 <div class="col-6">
                                     <a href="#">
                                         <h5>Cosmetics</h5>
                                     </a>
-                                    <a href="#">Shirt</a>
-                                    <a href="#">T-shirt</a>
-                                    <a href="#">Jins</a>
-                                    <a href="#">Shoe</a>
-                                    <a href="#">Sunglass</a>
-                                    <a href="#">Panjabi</a>
+                                    {% for category in links %}
+                                    <a href="{{category.get_url}}">{{category.category_name}}</a>
+                                    {% endfor%}
                                 </div>
 
 
