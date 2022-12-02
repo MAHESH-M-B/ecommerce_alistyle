@@ -9,5 +9,6 @@ router.register(r'Category', StoreViewset)
 urlpatterns = [
     path('api/store_api/', include(router.urls)),
     path('store/',views.store,name='store'),
-    path('store/<slug:category_slug>/',views.store,name='product_by_category')
+    path('store/<slug:category_slug>/',views.store,name='product_by_category'),
+    path('store/<slug:category_slug>/<slug:product_slug>',views.product_detail,name='product_detail'),
 ]
