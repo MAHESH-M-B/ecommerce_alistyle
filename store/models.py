@@ -1,5 +1,6 @@
 from django.db import models
 from category.models import Category
+from django.urls import reverse
 # Create your models here.
 class Store(models.Model):
     Product_name=models.CharField(max_length=100,unique=True)
@@ -13,6 +14,8 @@ class Store(models.Model):
     is_available=models.BooleanField(default=True)
     category=models.ForeignKey(Category,models.CASCADE)
 
+    # def get_url(self):
+    #     return reverse('product_by_category',args=[self.])
 
     
     def __str__(self):

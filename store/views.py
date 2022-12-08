@@ -25,6 +25,10 @@ def store(request,category_slug=None):
         }
     return render(request,'store/store.html' , context)
 
+def product_detail(request,category_slug,product_slug):
+    single_product=Store.objects.get
+    return render(request,'store/product_detail.html')
+
 
 
 class StoreViewset(viewsets.ModelViewSet):
