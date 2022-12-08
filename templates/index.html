@@ -87,11 +87,11 @@
 				{% for Category in links %}
 				<div class="col-md col-6">
 					<figure class="card-product-grid card-sm">
-						<a href="#" class="img-wrap">
-							<img src="{{ Category.cat_image.url }}">
+						<a href="{{Category.get_url}}" class="img-wrap">
+							<img  src="{{ Category.cat_image.url }}">
 						</a>
 						<div class="text-wrap p-3">
-							<a href="#" class="title">{{Category.category_name}}</a>
+							<a href="{{Category.get_url}}" class="title">{{Category.category_name}}</a>
 							<span class="badge badge-danger"> -20% </span>
 						</div>
 					</figure>
