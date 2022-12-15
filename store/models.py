@@ -14,9 +14,8 @@ class Store(models.Model):
     is_available=models.BooleanField(default=True)
     category=models.ForeignKey(Category,models.CASCADE)
 
-    # def get_url(self):
-    #     return reverse('product_by_category',args=[self.])
+    def get_url(self):
+        return reverse('product_in_detail',args=[self.category.category_slug,self.slug])
 
-    
     def __str__(self):
         return self.Product_name
