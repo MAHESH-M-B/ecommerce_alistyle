@@ -81,9 +81,15 @@
         </div>
     </div> <!-- col.// -->
     <div class="form-group col-md">
-        <a href="https://bootstrap-ecommerce.com/templates/alistyle-html/page-detail-product.html#" class="btn  btn-primary"> 
-            <i class="fas fa-shopping-cart"></i> <span class="text">Add to cart</span> 
-        </a>
+        {% if single_product.products_stock <= 0 %}
+            <a href=" " class="btn  btn-danger"> 
+                <i class="fas fa-shopping-cart"></i> <span class="text">Out of stock</span> 
+             </a>
+             {% else %}
+             <a href="https://bootstrap-ecommerce.com/templates/alistyle-html/page-detail-product.html#" class="btn  btn-primary"> 
+                <i class="fas fa-shopping-cart"></i> <span class="text"> Add to cart </span> 
+             </a>
+        {% endif %}
         <a href="https://bootstrap-ecommerce.com/templates/alistyle-html/page-detail-product.html#" class="btn btn-light">
     <i class="fas fa-envelope"></i> <span class="text">Contact supplier</span> 
         </a>
