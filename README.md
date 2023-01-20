@@ -1,7 +1,5 @@
  ecommerce_alistyle
-
 Run the project from Docker container
-
     Navigate to the project root directory
     Copy paste this command docker-compose build and hit enter
     Copy paste this command docker-compose up and hit enter
